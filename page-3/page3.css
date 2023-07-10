@@ -1,0 +1,165 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color:rgb(8, 11, 25);
+    color: white;
+    font-size: 25px;
+}
+
+p {
+    padding-left: 15px;
+}
+
+.container {
+    max-width: 1300px; 
+    padding-bottom: 1000px;
+}
+
+.navig-menu {
+    background: linear-gradient(rgb(150, 150, 177), rgb(31, 83, 195));
+    padding-bottom: 15px;
+    text-align: right;
+    border-bottom: 3px solid rgb(6, 192, 238);
+    margin-bottom: 100px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #fff; /* Фоновый цвет меню */
+    z-index: 100; /* Уровень слоя для перекрытия других элементов */
+}
+
+.logo-button {
+    border: 4px solid rgb(0, 0, 0);
+    background-color: white;
+    margin-right: 50px;
+    margin-top: 20px;
+    border-radius: 30px;
+    width: 150px;
+    
+}
+
+.button-text {
+    font-size: 20px;
+    color: rgb(0, 0, 0);
+}
+
+.flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo-button:hover {
+    background-color: rgb(149, 149, 174);
+
+}
+
+.logo-button:active {
+    background-color: rgb(94, 94, 122);
+}
+
+.head-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: 0;
+    margin-left: 25px;
+    color: black;
+}
+#chatbox {
+    width: 400px;
+    height: 300px;
+    border: 1px solid #ccc;
+    overflow: auto;
+}
+
+  #input {
+    width: 400px;
+}
+
+.chat {
+    margin-top: 200px;
+    margin-left: 350px;
+}
+
+#chatbox {
+    padding-right: 1000px;
+    padding-bottom: 300px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    border: 3px solid white;
+    box-shadow: 0px 0px 80px 5px blue;
+}
+
+#input {
+    padding-right: 1000px;
+    padding-bottom: 5px;
+    background-color: rgba(245, 222, 179, 0);
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    font-size: 20px;
+    color: white;
+}
+
+#input:focus {
+    outline: none !important;
+}
+
+.btn-send {
+    margin-top: 10px;
+    padding-right: 680px;
+    padding-bottom: 5px;
+    background-color: #cccccc00;
+    border: 3px solid blue;
+    border-radius: 20px;
+    color: white;
+    font-size: 20px;
+}
+
+.btn-send p {
+    margin-left: 650px;
+    margin-top: 10px;
+}
+
+.btn-send:hover {
+    background-color: rgb(10, 10, 142);
+}
+
+.btn-send:active {
+    background-color: rgb(7, 7, 105);
+}
+
+
+@media (max-width: 450px) {
+    .img-phone {
+        display: none;
+    }
+
+    .head-text {
+        margin-top: 20px;
+    }
+
+    .logo-button {
+        margin-right: 0;
+    }
+}
+
+@media (max-width: 360px) {
+    .head-text {
+        margin-top: 25px;
+        font-size: 26px;
+    }
+
+    .head-logo {
+        margin-left:10px;
+    }
+
+    .logo-button {
+        margin-right: 0;
+    }   
+}
