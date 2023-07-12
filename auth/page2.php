@@ -20,17 +20,15 @@
                     <input id="password_authorization"  type="password" placeholder="Введите пароль...">
                 </div>
         
-                <div class="button-send" >
-                        <button id="button-log">
-                            <p>Войти</p>
-                        </button>
-                    <p id="connect2"></p>
-                </div>
+                <div class="button-send">
+            <form action="../page-3/page3.php">
+                <button  id="button-reg">
+                    <p>Войти</p>
+                </button>
+            </form>
+        </div>
             </div>
         
-        
-            </div>
-
         </div>
     </div>  
 </body>

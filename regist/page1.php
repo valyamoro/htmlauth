@@ -22,7 +22,7 @@
         </div>
 
         <div class="button-send">
-            <form action="https://kagura7799.github.io/auth-page-2/">
+            <form action="../auth/page2.php">
                 <button  id="button-reg">
                     <p>Зарегистрироваться</p>
                 </button>
