@@ -38,8 +38,8 @@ function flash(?string $message = null)
     }
 }
 
-function check_auth(): bool
+function check_auth()
 {
-    return !!($_SESSION['user_id'] ?? false);
+    return (!!$_SESSION['user_id'] ?? false);
 }
 

@@ -1,3 +1,18 @@
+<?php
+
+error_reporting(E_ALL); ini_set('display_errors', 1);
+
+require_once __DIR__.'/../log/auth/boot.php';
+
+$user = null;
+
+if (check_auth()) {
+    // Получим данные пользователя по сохранённому идентификатору
+    $stmt = pdo()->prepare("SELECT * FROM `users` WHERE `id` = :id");
+    $stmt->execute(['id' => $_SESSION['user_id']]);
+    $user = $stmt->fetch(PDO::FETCH_ASSOC);
+}
+?>
 <!DOCTYPE html> 
 <html lang="en">
 <head>
@@ -13,14 +28,28 @@
             <div class="head-logo">
                 <img src="icon-phone.png" alt="phone" width="70" class="img-phone">
                 <h2 class="head-text">Me Chat</h2>
+            <?php if($user) { ?> </div>
+                <button class="logo-button">
+                    <div class="flex-center">
+                        <a href="../log/auth/do_logout.php">
+                        <span class="button-text">Выйти</span>
+                        <img src="icon-exit.png" alt="exit" class="logo" width="40" class="img-exit">
+                        </a> 
+                    </div>     
+                </button>         
+            </div>
+            <?php } else { ?>
             </div>
                 <button class="logo-button">
                     <div class="flex-center">
+                        <a href="../log/auth/do_login.php">
                         <span class="button-text">Войти</span>
                         <img src="icon-exit.png" alt="exit" class="logo" width="40" class="img-exit">
+                        </a>
                     </div>     
-                </button>         
-        </div>
+                </button>   
+                <?php }?>       
+            </div>
     </header>
 
 

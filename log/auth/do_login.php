@@ -7,7 +7,7 @@ $stmt = pdo()->prepare("SELECT * FROM `users` WHERE `username` = :username");
 $stmt->execute(['username' => $_POST['username']]);
 if (!$stmt->rowCount()) {
     flash('Пользователь с такими данными не зарегистрирован');
-    header('Location: ../login.php');
+    header('Location: ../../auth/page2.php');
     die;
 }
 $user = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -26,9 +26,9 @@ if (password_verify($_POST['password'], $user['password'])) {
         ]);
     }
     $_SESSION['user_id'] = $user['id'];
-    header('Location: ../../index.php');
+    header('Location: ../../page-3/page3.php');
     die;
 }
 
 flash('Пароль неверен');
-header('Location: ../login.php');
+header('Location: ../../regist/page1.php');

@@ -1,3 +1,12 @@
+<?php
+
+require_once __DIR__.'/../log/auth/boot.php';
+
+if (check_auth()) {
+    header('Location: /');
+    die;
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,28 +17,29 @@
 </head>
 <body>
     <div class="container">
+    <?php flash() ?>
         <h1>Авторизация</h1>    
             
+        <form action="../log/auth/do_login.php" method="post">
             <div class="block-login">
                     <p>Логин</p>
-                    <input id="login_authorization"  type="text" placeholder="Введите логин..."> 
+                    <input id="username" name="username"  type="text" placeholder="Введите логин..."> 
             </div>
             
                 <div class="block-password">
                     <p >Пароль</p>
-                    <input id="password_authorization"  type="password" placeholder="Введите пароль...">
+                    <input id="password" name="password"  type="password" placeholder="Введите пароль...">
                 </div>
         
                 <div class="button-send">
-            <form action="../page-3/page3.php">
                 <button  id="button-reg">
                     <p>Войти</p>
                 </button>
-            </form>
-        </div>
             </div>
-        
         </div>
-    </div>  
+        
+    </div>
+</div>  
+</form>
 </body>
 </html>
